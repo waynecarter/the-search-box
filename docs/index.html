@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Search Box</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+    <link rel="icon" href="images/the.svg">
+    <link rel=”mask-icon” href=”images/the.svg” color=”#000000">
+
+    <style>
+        html, body {
+            font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+            background-color: white;
+            color: black;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 1.5em;
+            font-weight: normal;
+        }
+
+        h2 {
+            font-size: 1.4em;
+            font-weight: normal;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            font-weight: 300;
+        }
+
+        header > h1 {
+            margin: 40px auto;
+            width: fit-content;
+        }
+
+        search-box {
+            display: block;
+            position: absolute;
+            width: min(80vw, 300px);
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .content {
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            row-gap: 80px;
+            justify-content: center;
+
+            margin-top: 110px;
+        }
+
+        .content > * {
+            display: inline-block;
+        }
+
+        @media only screen and (min-width: 200px) { .content > * { width: calc(100vw); } }
+        @media only screen and (min-width: 400px) { .content > * { width: calc(50vw); }  }
+        @media only screen and (min-width: 600px) { .content > * { width: calc(33.333vw); } }
+        @media only screen and (min-width: 800px) { .content > * { width: calc(25vw); } }
+        @media only screen and (min-width: 1000px) { .content > * { width: calc(20vw); } }
+        @media only screen and (min-width: 1200px) { .content > * { width: calc(16vw); } }
+
+        .content > * > * {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .content p {
+            font-size: max(14vw, 140px);
+        }
+    </style>
+
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1><b>The</b> Search Box</h1>
+    </header>
+    <search-box url="http://localhost:4984/products/" onsearch="showResults(event.detail);"></search-box>
+    <div class="content"></div>
+
+    <script>
+        function showResults(results) {
+            const content = document.querySelector('.content');
+            if (results) {
+                content.innerHTML = results.map(result => {
+                    return `
+                        <div>
+                            <p>${result.image}</p>
+                            <h2>${result.name}</h2>
+                            <h3>${result.price}</h3>
+                        </div>
+                    `;
+                }).join('');
+            } else {
+                content.innerHTML = null;
+            }
+        }
+    </script>
+</body>
+
+</html>

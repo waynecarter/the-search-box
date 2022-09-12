@@ -1,0 +1,11 @@
+type Product {
+    id: ID!
+    name: String!
+    image: String!
+    price: Float!
+}
+
+type Query {
+    productsAutocomplete(search: String): [String!]
+    products(search: String, offset: Int, limit: Int): [Product!]
+}

@@ -1,0 +1,27 @@
+@user=admin
+@password=password
+
+###############
+### GraphQL ###
+###############
+
+### Autocomplete
+POST http://{{user}}:{{password}}@localhost:4984/products/_graphql HTTP/1.1
+X-Request-Type: GraphQL
+
+query {
+    productsAutocomplete(search: "h")
+}
+
+### Get Products
+POST http://{{user}}:{{password}}@localhost:4984/products/_graphql HTTP/1.1
+X-Request-Type: GraphQL
+
+query {
+    products(search: "Hat", offset: 0, limit: 5) {
+        id,
+        name,
+        image,
+        price
+    }
+}

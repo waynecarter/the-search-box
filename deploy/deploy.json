@@ -1,0 +1,18 @@
+{
+    "gateway": {
+        "host": "localhost",
+        "database": {
+            "name": "products",
+            "bucket": "products"
+        }
+    },
+    "include": {
+        "database": true,
+        "users": true,
+        "roles": true,
+        "sync": true,
+        "resync": true,
+        "functions": true,
+        "graghql": true
+    }
+}

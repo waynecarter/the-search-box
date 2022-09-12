@@ -1,0 +1,14 @@
+[
+    {"id":"product1","type":"product","name":"Shirt","image":"👕","price":150},
+    {"id":"product2","type":"product","name":"Jeans","image":"👖","price":400},
+    {"id":"product3","type":"product","name":"Blouse","image":"👚","price":150},
+    {"id":"product4","type":"product","name":"Dress","image":"👗","price":400},
+    {"id":"product5","type":"product","name":"Shorts","image":"🩳","price":300},
+    {"id":"product6","type":"product","name":"Swimsuit","image":"🩱","price":300},
+    {"id":"product7","type":"product","name":"Briefs","image":"🩲","price":200},
+    {"id":"product8","type":"product","name":"Bikini","image":"👙","price":200},
+    {"id":"product9","type":"product","name":"Socks","image":"🧦","price":40},
+    {"id":"product10","type":"product","name":"Hat","image":"🧢","price":200},
+    {"id":"product11","type":"product","name":"Scarf","image":"🧣","price":300},
+    {"id":"product12","type":"product","name":"Gloves","image":"🧤","price":200}
+]
