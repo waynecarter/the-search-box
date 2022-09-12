@@ -24,7 +24,6 @@ window.customElements.define('search-box', class extends HTMLElement {
             _autocompleteList.innerHTML = null;
 
             _dispatchOnSearch(results);
-
         }
 
         async function _autocomplete() {
